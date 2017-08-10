@@ -69,9 +69,9 @@ sub DESTROY {
 }
 
 sub generate_id {
-	my $prefix = sprintf("%X",time());
-	my $suffix = int(rand(1000));
-	return "B$prefix.$suffix";
+	my $suffix = sprintf("%X",time().int(rand(1000)));
+
+	return "M$suffix";
 }
 
 sub run {
