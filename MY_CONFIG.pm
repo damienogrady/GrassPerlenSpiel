@@ -16,7 +16,7 @@ sub read_config_file {
 	my %output;
 	open CONFIG, $config_file or die "Couldn't open $config_file\n";
 	while (<CONFIG>) {
-		my @pair = split(/\t/, $_);
+		my @pair = split(/=/, $_);
 		chomp @pair;
 		$output{$pair[0]} = $pair[1];
 	}
